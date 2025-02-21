@@ -1,45 +1,64 @@
 # Nota-Fiscal-Python
 
-📌 Principais Funcionalidades do Código:
-Interface gráfica com PySimpleGUI:
+# Sistema de Gerenciamento de Notas Fiscais
 
-Criar, fechar e gerenciar janelas de cadastro de clientes, produtos e notas fiscais.
-Banco de Dados (SQLite e Prolog):
+Este projeto é um **sistema de gerenciamento de notas fiscais**, clientes e produtos, desenvolvido em **Python**. Ele utiliza **PySimpleGUI** para a interface gráfica, **SQLite** para armazenamento de dados e **Prolog** para regras de conhecimento.
 
-Registra e lista clientes e produtos tanto no SQLite quanto no Prolog.
-Armazena notas fiscais geradas.
-Gerenciamento de Notas Fiscais:
+## 📌 Funcionalidades
+- **Cadastro de Clientes e Produtos**
+- **Geração de Notas Fiscais**
+- **Armazenamento de Dados no Banco SQLite**
+- **Consulta de Clientes e Produtos no Prolog**
+- **Interface Gráfica com PySimpleGUI**
 
-Recupera o último número de nota fiscal salvo.
-Gera um novo número de nota fiscal sequencial.
-Calcula o valor total da nota fiscal.
-Salva as notas fiscais no banco de dados.
-🛠 Explicação dos Componentes:
-🔹 Prolog (base_conhecimento.pl)
-O código usa Prolog para armazenar informações como clientes e produtos.
-Ele consulta os fatos armazenados em base_conhecimento.pl através de listar_clientes_prolog() e listar_produtos_prolog().
-🔹 Banco de Dados SQLite
-O código usa funções importadas (adicionar_cliente, listar_clientes, salvar_nota_fiscal) para gerenciar registros no banco.
-🔹 Funções Principais:
-listar_clientes_prolog() e listar_produtos_prolog()
-→ Obtêm clientes e produtos armazenados no Prolog.
+## 🛠 Tecnologias Utilizadas
+- **Python**
+- **PySimpleGUI**
+- **SQLite**
+- **Prolog (pyswip)**
+- **datetime** (para manipulação de datas)
 
-gerar_nota_fiscal(numero, cliente, produto, quantidade, valor_unitario)
-→ Gera o texto da nota fiscal com valores calculados.
+## 📂 Estrutura do Projeto
+```
+/
+├── logica.py  # Código principal do sistema
+├── gui.py  # Módulo responsável pela interface gráfica
+├── database.py  # Módulo de gerenciamento do banco de dados SQLite
+├── base_conhecimento.pl  # Arquivo Prolog com regras e fatos
+├── README.md  # Documentação do projeto
+```
 
-gerenciar_nota_fiscal(cliente, produto, quantidade)
-→ Obtém o número da nota fiscal, calcula o valor total e salva no banco.
+## 🚀 Como Funciona
+### 🔹 1. Cadastro de Clientes e Produtos
+- Os clientes e produtos podem ser cadastrados via interface gráfica.
+- Os dados são armazenados no **SQLite** e também podem ser consultados no **Prolog**.
 
-main() (Loop principal)
+### 🔹 2. Geração de Nota Fiscal
+- O usuário seleciona um cliente, produto e quantidade.
+- O sistema gera um número de nota fiscal e calcula o valor total.
+- A nota fiscal é armazenada no banco de dados.
 
-Controla as janelas da interface gráfica.
-Gerencia eventos como cadastro de clientes, produtos e emissão de notas fiscais.
-🔥 Fluxo do Programa:
-Inicia e cria as tabelas do banco de dados.
-Exibe a janela principal com botões para cadastrar clientes, cadastrar produtos e gerar nota fiscal.
-Ao clicar em "Cadastrar Cliente" ou "Cadastrar Produto", abre as janelas correspondentes para inserir dados.
-Ao clicar em "Gerar Nota Fiscal":
-Obtém clientes e produtos do Prolog e SQLite.
-Exibe uma janela para escolher cliente, produto e quantidade.
-Calcula o total e armazena a nota no banco.
-O programa permanece rodando até a janela principal ser fechada.
+### 🔹 3. Interface Gráfica (PySimpleGUI)
+- Exibe opções para cadastrar clientes, cadastrar produtos e gerar notas fiscais.
+- Mostra mensagens interativas para facilitar a experiência do usuário.
+
+## ⚙️ Instalação e Execução
+### 📥 Pré-requisitos
+Certifique-se de ter **Python 3.x** instalado. Além disso, instale as dependências necessárias:
+```sh
+pip install PySimpleGUI pyswip
+```
+
+### ▶ Executando o Projeto
+Para iniciar o sistema, basta rodar o script principal:
+```sh
+python logica.py
+```
+
+---
+
+### 📧 Contato
+Desenvolvido por **Juan Victor de Moura**. Caso tenha dúvidas ou sugestões, entre em contato:
+- **E-mail**: juanvictor.moura21@gmail.com
+- **GitHub**: https://github.com/Zxo21
+
